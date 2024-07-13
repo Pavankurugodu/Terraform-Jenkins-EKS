@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage("Create an EKS Cluster") {
             steps {
-                script {
-                    dir('Terraform-Jenkins-Eks/kubernetes') {
+                    {
+                        sh "cd kubernetes"
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
                     }
